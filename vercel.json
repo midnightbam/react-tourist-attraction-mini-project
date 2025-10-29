@@ -1,13 +1,9 @@
 {
   "version": 2,
-  "buildCommand": "echo 'Build complete'",
   "builds": [
     {
       "src": "server/app.js",
-      "use": "@vercel/node",
-      "config": {
-        "includeFiles": "server/**"
-      }
+      "use": "@vercel/node"
     }
   ],
   "routes": [
