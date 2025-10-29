@@ -1,7 +1,20 @@
-const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:4001";
+// Get the base URL depending on environment
+const getBaseURL = () => {
+  // In production (Vercel), use relative API paths
+  if (import.meta.env.PROD) {
+    return "/api";
+  }
+  // In development, use localhost
+  return "http://localhost:4001/api";
+};
+
+const BASE_URL = getBaseURL();
 
 async function request(path) {
-  const res = await fetch(`${BASE_URL}${path}`);
+  const url = `${BASE_URL}${path}`;
+  console.log("Fetching from:", url); // For debugging
+  
+  const res = await fetch(url);
   if (!res.ok) {
     const msg = await res.text();
     throw new Error(msg || `HTTP ${res.status}`);
