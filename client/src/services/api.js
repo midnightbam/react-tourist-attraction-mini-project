@@ -4,7 +4,7 @@ const getBaseURL = () => {
   if (import.meta.env.PROD) {
     return "/api";
   }
-  // In development, use localhost
+  // In development, use localhost with /api prefix
   return "http://localhost:4001/api";
 };
 
