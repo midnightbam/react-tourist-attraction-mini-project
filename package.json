@@ -1,0 +1,13 @@
+{
+  "name": "tourist-attraction",
+  "version": "1.0.0",
+  "description": "A tourist attraction search website",
+  "scripts": {
+    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
+    "dev": "concurrently \"cd server && npm run start\" \"cd client && npx vite\"",
+    "build": "cd client && npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
